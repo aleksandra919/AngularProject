@@ -1,0 +1,16 @@
+<div>
+  <ng-container *ngIf = 'tasksList.length >0; else noTask'>
+    <p [ngStyle] = '{color: getColor()}'> to-do tasks : {{tasksList.length}} </p>
+    <ul>
+      <li appDate [date] = 'task.created' *ngFor = 'let task of tasksList | sortName' >
+        <!--przesylamy ! jako argument (args) -->
+        {{task.name | transformTask: '!'}}
+        <button type="button" class="btn btn-danger" (click)='remove(task)'>Delete</button> <!--iterujemy po liscie zadan wiec mozemy je w naszej metodzie przeslac-->
+        <button type="button" class="btn btn-success" (click)='done(task)'>Done</button>
+      </li>
+    </ul>
+  </ng-container>
+  <ng-template #noTask> <!-- przypisujemy tutaj to co ma sie stac przy else -->
+    <p>Brak zadań masz czas wolny!</p>
+  </ng-template>
+</div>
