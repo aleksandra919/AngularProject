@@ -1,3 +1,7 @@
+Application which allows add new task, remove task from the list, checks task as 'done'. It displays also number of task 'to-do' and number of already done tasks. Appliaction is connected to database in MongoDB
+Used technologies: Angular4, MongoDB
+
+
 # TasksList
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
